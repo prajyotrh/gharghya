@@ -1,3 +1,25 @@
+<?php
+
+
+
+$to_email = "prajyothalingale05@gmail.com,gharghya99@gmail.com";
+
+$subject = "Enquiry";
+$body = $_POST['name'];
+$body .= $_POST['number'];
+$body .= $_POST['message'];
+$headers = "From: prajyothalingale05@gmail.com";
+
+if (mail($to_email, $subject, $body, $headers)) {
+	echo 'mail sent succesfully';
+} else {
+    echo "Email sending failed";
+}	
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -490,7 +512,7 @@
                
                 <div class="col-xs-12 col-sm-6 col-md-6">
                   <h5>Contact Us</h5>
-                  <form action="php/form1.php" method="POST" >
+                  <form action="index.php" method="POST" >
                     <div class="form-group" >
                       <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter full name" required>
                     </div>
